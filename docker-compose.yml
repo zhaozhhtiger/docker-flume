@@ -1,9 +1,9 @@
-version: '3'
+version: '2'
 
 services:
 
   source:
-    image: flume:latest
+    image: probablyfine/flume:latest
     ports:
      - "44444:44444"
     volumes:
@@ -14,7 +14,7 @@ services:
       - "sink:sink"
 
   sink:
-    image: flume:latest
+    image: probablyfine/flume:latest
     volumes:
      - ./fixtures/sink.conf:/opt/flume-config/flume.conf
      - ./output:/var/tmp/output
